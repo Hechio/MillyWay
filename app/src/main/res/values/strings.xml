@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">The Milky Way</string>
+    <string name="center">Center:</string>
+    <string name="date_created">Date Created:</string>
+    <string name="slash">%1$s | %2$s</string>
+    <string name="woops">😨 Wooops %1$s</string>
+</resources>

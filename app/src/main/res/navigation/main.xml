@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/milkyWayImagesFragment">
+
+    <fragment
+        android:id="@+id/milkyWayImagesFragment"
+        android:name="com.stevehechio.milkyway.ui.fragments.MilkyWayImagesFragment"
+        android:label="fragment_milky_way_images"
+        tools:layout="@layout/fragment_milky_way_images" >
+        <action
+            android:id="@+id/action_milkyWayImagesFragment_to_imageDescriptionFragment"
+            app:destination="@id/imageDescriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDescriptionFragment"
+        android:name="com.stevehechio.milkyway.ui.fragments.ImageDescriptionFragment"
+        android:label="fragment_image_description"
+        tools:layout="@layout/fragment_image_description" />
+</navigation>

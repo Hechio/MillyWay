@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:layout_marginTop="@dimen/padding_10"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_milky_way"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:transitionName="milkyImage"/>
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:translationZ="90dp"
+        android:indeterminateOnly="true"/>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_10"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:transitionName="milkyTitle"
+            android:textSize="@dimen/text_big"
+            tools:text="Fog Elemental That Star over there" />
+
+        <TextView
+            android:id="@+id/tv_center_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_medium"
+            tools:text="Alien Creature | Elemental" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>
