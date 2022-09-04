@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.stevehechio.milkyway.db.AppDatabase
+import com.stevehechio.milkyway.data.local.db.AppDatabase
 import com.stevehechio.milkyway.data.remote.api.MilkyWayApiService
 import com.stevehechio.milkyway.data.repository.MilkyWayRepository
 import com.stevehechio.milkyway.ui.viewmodel.MilkyWayViewModel

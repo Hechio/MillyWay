@@ -6,14 +6,13 @@ import android.util.Log
 import com.stevehechio.milkyway.data.Resource
 import com.stevehechio.milkyway.data.local.entities.MilkyWayEntity
 import com.stevehechio.milkyway.data.remote.api.MilkyWayApiService
-import com.stevehechio.milkyway.db.AppDatabase
+import com.stevehechio.milkyway.data.local.db.AppDatabase
 import com.stevehechio.milkyway.utils.NetworkUtil
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
 import io.reactivex.schedulers.Schedulers.io
 import javax.inject.Inject
 

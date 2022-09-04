@@ -1,4 +1,4 @@
-package com.stevehechio.milkyway.db
+package com.stevehechio.milkyway.data.local.db
 
 import android.content.Context
 import androidx.room.Database
