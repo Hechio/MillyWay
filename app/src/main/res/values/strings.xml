@@ -4,4 +4,5 @@
     <string name="date_created">Date Created:</string>
     <string name="slash">%1$s | %2$s</string>
     <string name="woops">😨 Wooops %1$s</string>
+    <string name="something_went_wrong">Something went wrong.</string>
 </resources>

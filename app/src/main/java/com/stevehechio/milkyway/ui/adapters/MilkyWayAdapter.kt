@@ -9,8 +9,8 @@ import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -18,14 +18,14 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.stevehechio.milkyway.R
-import com.stevehechio.milkyway.local.entities.MilkyWayEntity
+import com.stevehechio.milkyway.data.local.entities.MilkyWayEntity
 import com.stevehechio.milkyway.databinding.ItemMickyWayBinding
 import com.stevehechio.milkyway.utils.gone
 import com.stevehechio.milkyway.utils.toDate
 import java.util.*
 
 class MilkyWayAdapter(val context: Context):
-    PagingDataAdapter<MilkyWayEntity,MilkyWayAdapter.MilkyWayViewHolder>(MILKY_WAY_COMPARATOR){
+    ListAdapter<MilkyWayEntity, MilkyWayAdapter.MilkyWayViewHolder>(MILKY_WAY_COMPARATOR){
     private var lastPosition = -1
 
     var onClickItemListener: OnClickItemListener? = null

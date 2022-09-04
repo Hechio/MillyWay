@@ -2,7 +2,7 @@ package com.stevehechio.milkyway.data.remote.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import com.stevehechio.milkyway.local.entities.MilkyWayEntity
+import com.stevehechio.milkyway.data.local.entities.MilkyWayEntity
 import java.io.Serializable
 
 data class MilkyWayApiResponse(

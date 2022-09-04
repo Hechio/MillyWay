@@ -1,10 +1,10 @@
-package com.stevehechio.milkyway.local.convertors
+package com.stevehechio.milkyway.data.local.convertors
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.stevehechio.milkyway.local.entities.Link
-import com.stevehechio.milkyway.local.entities.MilkyWayData
+import com.stevehechio.milkyway.data.local.entities.Link
+import com.stevehechio.milkyway.data.local.entities.MilkyWayData
 
 object MilkyWayTypeConvertor {
     @TypeConverter

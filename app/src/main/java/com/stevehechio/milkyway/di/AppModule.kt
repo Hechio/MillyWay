@@ -79,9 +79,10 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideMilkyRepository(service: MilkyWayApiService, appDatabase: AppDatabase
+    fun provideMilkyRepository(@ApplicationContext context: Context,service: MilkyWayApiService,
+                               appDatabase: AppDatabase
     ): MilkyWayRepository{
-        return MilkyWayRepository(service, appDatabase)
+        return MilkyWayRepository(context,service, appDatabase)
     }
 
     @Provides

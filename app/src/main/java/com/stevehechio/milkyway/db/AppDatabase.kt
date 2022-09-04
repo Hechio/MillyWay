@@ -5,12 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.stevehechio.milkyway.local.convertors.LinkConverter
-import com.stevehechio.milkyway.local.convertors.MilkyWayTypeConvertor
-import com.stevehechio.milkyway.local.dao.MilkyWayDao
-import com.stevehechio.milkyway.local.dao.RemoteKeysDao
-import com.stevehechio.milkyway.local.entities.MilkyWayEntity
-import com.stevehechio.milkyway.local.entities.RemoteKeys
+import com.stevehechio.milkyway.data.local.convertors.LinkConverter
+import com.stevehechio.milkyway.data.local.convertors.MilkyWayTypeConvertor
+import com.stevehechio.milkyway.data.local.dao.MilkyWayDao
+import com.stevehechio.milkyway.data.local.dao.RemoteKeysDao
+import com.stevehechio.milkyway.data.local.entities.MilkyWayEntity
+import com.stevehechio.milkyway.data.local.entities.RemoteKeys
 import com.stevehechio.milkyway.utils.AppConstants
 
 

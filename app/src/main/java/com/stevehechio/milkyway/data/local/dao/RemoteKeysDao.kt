@@ -1,10 +1,10 @@
-package com.stevehechio.milkyway.local.dao
+package com.stevehechio.milkyway.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.stevehechio.milkyway.local.entities.RemoteKeys
+import com.stevehechio.milkyway.data.local.entities.RemoteKeys
 
 @Dao
 interface RemoteKeysDao {

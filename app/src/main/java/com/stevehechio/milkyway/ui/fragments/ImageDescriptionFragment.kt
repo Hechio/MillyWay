@@ -15,7 +15,7 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.stevehechio.milkyway.local.entities.MilkyWayEntity
+import com.stevehechio.milkyway.data.local.entities.MilkyWayEntity
 import com.stevehechio.milkyway.databinding.FragmentImageDescriptionBinding
 import com.stevehechio.milkyway.utils.gone
 import com.stevehechio.milkyway.utils.toDate

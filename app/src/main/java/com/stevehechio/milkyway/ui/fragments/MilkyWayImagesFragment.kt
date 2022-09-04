@@ -17,7 +17,8 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.stevehechio.milkyway.R
-import com.stevehechio.milkyway.local.entities.MilkyWayEntity
+import com.stevehechio.milkyway.data.Resource
+import com.stevehechio.milkyway.data.local.entities.MilkyWayEntity
 import com.stevehechio.milkyway.databinding.FragmentMilkyWayImagesBinding
 import com.stevehechio.milkyway.ui.adapters.MilkyWayAdapter
 import com.stevehechio.milkyway.ui.viewmodel.MilkyWayViewModel
@@ -76,32 +77,46 @@ class MilkyWayImagesFragment : Fragment() {
     }
 
     private fun fetchMilkyImages() {
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.fetchImages().collect{ pagingData ->
-                mAdapter.submitData(pagingData)
-                Log.d("MilkyFragment", "fetch images count: ${mAdapter.itemCount}")
-            }
-        }
-        viewLifecycleOwner.lifecycleScope.launch {
-            mAdapter.loadStateFlow.collect{ loadState ->
-                binding.rv.isVisible =  loadState.source.refresh is LoadState.NotLoading ||
-                        loadState.mediator?.refresh is LoadState.NotLoading
-                binding.pb.isVisible = loadState.mediator?.refresh is LoadState.Loading
-
-                val errorState = loadState.source.append as? LoadState.Error
-                    ?: loadState.source.prepend as? LoadState.Error
-                    ?: loadState.append as? LoadState.Error
-                    ?: loadState.prepend as? LoadState.Error
-                errorState?.let {
-                    binding.apply {
-                        tvError.visible()
-                        pb.gone()
-                        rv.gone()
-                        tvError.text = getString(R.string.woops, it.error.localizedMessage)
+        viewModel.getMilkyLiveData().observe(viewLifecycleOwner){response ->
+            when(response){
+                is Resource.Success ->{
+                    mAdapter.submitList(response.data)
+                    stopLoadingWithSuccess()
+                }
+                is Resource.Failure -> {
+                    val error = response.cause
+                    binding.tvError.text = getString(R.string.woops, error)
+                    stopLoadingWithError()
+                }
+                is Resource.Loading -> {
+                    if (mAdapter.itemCount < 1){
+                        startLoading()
                     }
+                }
+                else -> {
+                    binding.tvError.text = getString(R.string.something_went_wrong)
+                    stopLoadingWithError()
                 }
             }
         }
+       viewModel.fetchImages()
+
+    }
+    private fun stopLoadingWithSuccess() {
+        binding.rv.visible()
+        binding.pb.gone()
+        binding.tvError.gone()
+    }
+    private fun stopLoadingWithError() {
+        binding.rv.gone()
+        binding.pb.gone()
+        binding.tvError.visible()
+    }
+
+    private fun startLoading() {
+        binding.rv.gone()
+        binding.pb.visible()
+        binding.tvError.gone()
     }
 
     override fun onDestroyView() {

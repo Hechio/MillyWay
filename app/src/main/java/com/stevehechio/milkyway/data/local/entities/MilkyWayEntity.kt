@@ -1,11 +1,11 @@
-package com.stevehechio.milkyway.local.entities
+package com.stevehechio.milkyway.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
-import com.stevehechio.milkyway.local.convertors.LinkConverter
-import com.stevehechio.milkyway.local.convertors.MilkyWayTypeConvertor
+import com.stevehechio.milkyway.data.local.convertors.LinkConverter
+import com.stevehechio.milkyway.data.local.convertors.MilkyWayTypeConvertor
 import com.stevehechio.milkyway.utils.AppConstants
 import java.io.Serializable
 
